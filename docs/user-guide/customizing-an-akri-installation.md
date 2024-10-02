@@ -74,7 +74,7 @@ The `brokerJobSpec` property is a full [JobSpec](https://v1-18.docs.kubernetes.i
 
 #### Modifying instanceServiceSpec or configurationServiceSpec
 
-The `instanceServiceSpec` and `configurationServiceSpec` properties are full [ServiceSpecs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#servicespec-v1-core) and can be modified as such. The simplest reason to modify either might be to specify different ports (perhaps 8085 and 8086):
+A Configuration can define a service that should be created to access its specific capabilities. `instanceServiceSpec`s define services that should exist at most once for each Instance. `configurationServiceSpec`s should exist at most once for each Configuration. Both are full [ServiceSpecs](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#servicespec-v1-core) and can be modified as such. The simplest reason to modify either might be to specify different ports (perhaps 8085 and 8086):
 
 ```yaml
 spec:
